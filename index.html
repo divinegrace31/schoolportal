@@ -1,0 +1,1375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>School Event and Announcement Portal</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    <head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <style>
+    
+            :root {
+    --primary-blue: #003087;
+    --light-blue: #0077cc;
+}
+
+body {
+    font-family: 'Roboto', Arial, sans-serif;
+    line-height: 1.6;
+    padding-top: 100px;
+}
+
+/* Navbar */
+.navbar {
+    background-color: var(--primary-blue) !important;
+    position:fixed;
+    top: 0;
+    left: 0;
+    width:100%;
+    z-index: 9999;
+}
+.nav-link.active {
+    font-weight: bold;
+    
+}
+
+/* Hero Section */
+.hero {
+    background-color: #003087;
+
+    background: linear-gradient(
+        rgba(0, 48, 135, 0.8), 
+        rgba(0, 48, 135, 0.8)
+    ),
+    url('https://source.unsplash.com/random/1920x1080/?school') center/cover no-repeat;
+
+    /* CHANGE SIZE */
+    height: 100vh;          /* Height of homepage */
+    width: 100%;            /* Full width */
+
+    /* SPACING */
+    padding: 100px;     /* Top-Bottom | Left-Right */
+
+    /* TEXT SETTINGS */
+    color: white;
+    text-align: center;
+
+    /* CENTER CONTENT */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* FULL SCREEN EVENTS */
+#events {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+}
+
+/* CONTAINER WIDTH */
+#events .container {
+    max-width: 1200px;
+}
+
+/* CARD DESIGN */
+#events .card {
+    border-radius: 15px;
+    transition: 0.3s;
+}
+
+#events .card:hover {
+    transform: translateY(-8px);
+}
+
+/* EVENT DATE */
+#events .event-date {
+    width: 70px;
+    height: 80px;
+    background-color: #0077cc;
+    color: white;
+    border-radius: 10px;
+    text-align: center;
+    padding: 10px;
+}
+
+/* TEXT SIZE */
+#events .event-date .fs-3 {
+    font-size: 22px;
+}
+
+/* CARD BODY */
+#events .card-body {
+    padding: 15px;
+}
+
+/* BUTTON */
+#events .btn {
+    margin-top: 10px;
+}
+
+/* Cards */
+.card-announcement {
+    transition: transform 0.3s;
+
+    padding: 100px;
+}
+
+.card-announcement:hover {
+    transform: translateY(-10px);
+    padding: 100px;
+}
+/* UPCOMING EVENTS CARD */
+.event-card {
+    height: 350px;       /* CARD HEIGHT */
+    width: 100%;         /* CARD WIDTH */
+    padding: 20px;       /* INSIDE SPACE */
+    border-radius: 15px;
+    padding: 100px;
+}
+
+/* EVENT TEXT */
+.event-card h5 {
+    font-size: 24px;
+    font-weight: bold;
+    padding: 100px;
+}
+
+/* EVENT DETAILS */
+.event-card p {
+    font-size: 16px;
+    padding: 100px;
+}
+
+/* EVENT DATE BOX */
+.event-date {
+    width: 80px;
+    height: 90px;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #0077cc;
+    color: white;
+    text-align: center;
+    padding: 100px;
+}
+/* CHANGE SIZE */
+.event-card {
+    height: 100vh;          /* Height of homepage */
+    width: 100%;            /* Full width */
+
+    /* SPACING */
+    padding: 100px;     /* Top-Bottom | Left-Right */
+
+    /* TEXT SETTINGS */
+    color: white;
+    text-align: center;
+
+    /* CENTER CONTENT */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s;
+
+    /* GENERAL */
+body {
+    background-color: #f5f7fb;
+    font-family: 'Segoe UI', sans-serif;
+
+    .event-date {
+            background: #0d6efd;
+            color: white;
+            padding: 10px;
+            border-radius: 10px;
+            text-align: center;
+            width: 70px;
+        }
+
+        .card {
+            border-radius: 15px;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+}
+
+
+/* SECTION TITLE */
+#announcements {
+    scroll-margin-top: 80px; 
+}
+
+#announcements h2 {
+    font-weight: bold;
+    color: #333;
+}
+
+/* CARD DESIGN */
+.card-announcement {
+    border: none;
+    border-radius: 15px;
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+/* CARD HOVER EFFECT */
+.card-announcement:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* CARD BODY */
+.card-announcement .card-body {
+    padding: 20px;
+}
+
+/* TITLE */
+.card-title {
+    font-weight: 600;
+    color: #222;
+}
+
+/* TEXT */
+.card-text {
+    font-size: 14px;
+    color: #555;
+}
+
+/* FOOTER */
+.card-footer {
+    border-top: none;
+    background: transparent;
+    padding: 15px;
+}
+
+/* BUTTON STYLE */
+.card-announcement .btn {
+    width: 100%;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+/* BUTTON HOVER */
+.card-announcement .btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* BUTTON CLICK */
+.card-announcement .btn:active {
+    transform: scale(0.95);
+}
+
+/* BADGES */
+.badge {
+    font-size: 12px;
+    padding: 6px 10px;
+    border-radius: 20px;
+}
+
+/* MODAL DESIGN */
+.modal-content {
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+/* MODAL HEADER */
+.modal-header {
+    background: #0d6efd;
+    color: white;
+    border-bottom: none;
+}
+
+/* MODAL TITLE */
+.modal-title {
+    font-weight: bold;
+}
+
+/* CLOSE BUTTON WHITE */
+.btn-close {
+    filter: invert(1);
+}
+
+/* MODAL BODY */
+.modal-body {
+    font-size: 15px;
+    color: #444;
+    padding: 20px;
+}
+
+/* RESPONSIVE SPACING */
+@media (max-width: 768px) {
+    #announcements {
+        padding: 30px 10px;
+    }
+}
+}
+
+#contact {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* FORM CONTAINER */
+#contact .col-lg-8 {
+    width: 100%;
+    max-width: 700px;
+
+    background: #ffffff;
+    padding: 100px;              /* INNER PADDING (MAIN ONE) */
+    border-radius: 15px;
+
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+
+    margin: auto;
+    
+}
+
+/* TITLE */
+#contact h2 {
+    font-weight: bold;
+    color: var(--primary-blue);
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+/* INPUTS */
+#contact .form-control,
+#contact .form-select {
+    border-radius: 10px;
+    padding: 12px 15px;         /* INPUT PADDING */
+    border: 1px solid #ddd;
+    transition: 0.3s;
+}
+
+/* INPUT FOCUS */
+#contact .form-control:focus,
+#contact .form-select:focus {
+    border-color: var(--light-blue);
+    box-shadow: 0 0 8px rgba(0,119,204,0.3);
+}
+
+/* TEXTAREA */
+#contact textarea {
+    resize: none;
+}
+
+/* BUTTON */
+#contact .btn {
+    background-color: var(--primary-blue);
+    border: none;
+    border-radius: 10px;
+
+    padding: 12px;              /* BUTTON SIZE */
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+/* BUTTON HOVER */
+#contact .btn:hover {
+    background-color: var(--light-blue);
+}
+.footer {
+            background-color: #00205c;
+}
+/* ABOUT SECTION */
+#about {
+    padding: 80px 0;
+    min-height: 100vh; /* buong screen */
+    display: flex;
+    align-items: center;
+}
+
+/* TEXT SIDE */
+#about h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #0d6efd;
+}
+
+#about .lead {
+    font-size: 1.1rem;
+    color: #555;
+    line-height: 1.8;
+}
+
+/* LIST STYLE */
+.list-group-item {
+    border: none;
+    background: transparent;
+    font-size: 1rem;
+    padding-left: 0;
+    color: #333;
+}
+
+/* BUTTON */
+#about .btn-primary {
+    padding: 10px 25px;
+    border-radius: 30px;
+    font-weight: 600;
+    transition: 0.3s ease;
+}
+
+#about .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* IMAGE */
+#about img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 15px;
+    transition: 0.3s ease;
+}
+
+#about img:hover {
+    transform: scale(1.02);
+}
+
+/* MODAL DESIGN */
+.modal-content {
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.modal-header {
+    border-bottom: none;
+}
+
+.modal-body {
+    padding: 25px;
+    font-size: 1rem;
+    color: #444;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+
+    #about {
+        padding: 60px 20px;
+        text-align: center;
+    }
+
+    #about h2 {
+        font-size: 2rem;
+    }
+
+    #about .lead {
+        font-size: 1rem;
+    }
+
+    .list-group-item {
+        text-align: left;
+    }
+
+    #about img {
+        margin-top: 30px;
+    }
+}
+
+/* LOGIN MODAL DESIGN */
+
+.modal-content{
+    border-radius: 15px;
+    overflow: hidden;
+    border: none;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+    animation: fadeIn 0.3s ease;
+}
+
+/* HEADER */
+.modal-header{
+    background: linear-gradient(135deg, #0d6efd, #0056d2);
+    border-bottom: none;
+    padding: 18px 25px;
+    padding-top: 50px;
+}
+
+.modal-title{
+    font-weight: 600;
+    font-size: 22px;
+}
+
+/* BODY */
+.modal-body{
+    padding: 25px;
+    background: #f8f9fa;
+}
+
+/* LABELS */
+.modal-body label{
+    font-weight: 500;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+/* INPUTS */
+.form-control,
+.form-select{
+    border-radius: 10px;
+    padding: 10px 14px;
+    border: 1px solid #ccc;
+    transition: 0.3s;
+}
+
+.form-control:focus,
+.form-select:focus{
+    border-color: #0d6efd;
+    box-shadow: 0 0 8px rgba(13,110,253,0.3);
+}
+
+/* ERROR MESSAGE */
+#loginError{
+    font-size: 14px;
+    font-weight: 500;
+    margin-top: 10px;
+}
+
+/* FOOTER */
+.modal-footer{
+    border-top: none;
+    padding: 20px;
+    background: #fff;
+}
+
+/* BUTTONS */
+.btn-primary{
+    background: linear-gradient(135deg, #0d6efd, #0056d2);
+    border: none;
+    border-radius: 10px;
+    padding: 10px 20px;
+    transition: 0.3s;
+}
+
+.btn-primary:hover{
+    transform: translateY(-2px);
+    background: linear-gradient(135deg, #0056d2, #0040a8);
+}
+
+.btn-secondary{
+    border-radius: 10px;
+    padding: 10px 20px;
+}
+
+/* REGISTER TEXT */
+.text-center small{
+    color: #555;
+}
+
+.text-center a{
+    color: #0d6efd;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.text-center a:hover{
+    text-decoration: underline;
+}
+
+/* ANIMATION */
+@keyframes fadeIn{
+    from{
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    to{
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+
+
+   </style>
+   </head>
+   <script>
+    // Activate Bootstrap ScrollSpy
+    const scrollSpy = new bootstrap.ScrollSpy(document.body, {
+        target: '#navbarNav',
+        offset: 70
+    });
+</script>
+<script>
+document.querySelectorAll('.nav-link').forEach(link => {
+    link.addEventListener('click', function() {
+        document.querySelectorAll('.nav-link').forEach(el => el.classList.remove('active'));
+        this.classList.add('active');
+    });
+});
+</script>
+<body data-bs-spy="scroll" data-bs-target="#navbarNav" data-bs-offset="70" tabindex="0">
+
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container">
+        <a class="navbar-brand fw-bold" href="#">School Portal</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="#announcement">Announcement</a></li>
+                <li class="nav-item"><a class="nav-link" href="#events">Events</a></li>
+                <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                <li class="nav-item">
+                    <button class="btn btn-light btn-sm ms-3" data-bs-toggle="modal" data-bs-target="#loginModal">Login</button>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- HERO / HOME SECTION -->
+<section id="home" class="hero text-center">
+    <div class="container">
+        <h1 class="display-4 fw-bold mb-3">Welcome to School Event & Announcement Portal</h1>
+        <p class="lead mb-4">Stay updated with all school announcements and upcoming events in one place.</p>
+        <div class="d-flex justify-content-center gap-3">
+        </div>
+    </div>
+</section>
+
+<!-- ANNOUNCEMENTS SECTION -->
+<section id="announcement" class="py-5">
+    <div class="container">
+    <br>
+        <h2 class="text-center mb-5">Latest Announcement</h2>
+        <div class="row g-4">
+
+            <!-- CARD 1 -->
+            <div class="col-md-6 col-lg-4">
+                <div class="card card-announcement h-100 shadow-sm">
+                    <div class="card-body">
+                        <span class="badge bg-danger mb-2">Important</span>
+                        <h5 class="card-title">Final Exam Schedule Released</h5>
+                        <p class="card-text">The final examination schedule is now available.</p>
+                        <small class="text-muted">Posted 2 hours ago • Admin</small>
+                    </div>
+                    <div class="card-footer bg-white">
+                        <button class="btn btn-sm btn-primary"
+                                data-bs-toggle="modal"
+                                data-bs-target="#modal1">
+                            Read More
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CARD 2 -->
+            <div class="col-md-6 col-lg-4">
+                <div class="card card-announcement h-100 shadow-sm">
+                    <div class="card-body">
+                        <span class="badge bg-success mb-2">Event</span>
+                        <h5 class="card-title">Graduation Ceremony 2026</h5>
+                        <p class="card-text">Graduation rehearsal on May 20, 2026.</p>
+                        <small class="text-muted">Posted yesterday • Academic Office</small>
+                    </div>
+                    <div class="card-footer bg-white">
+                        <button class="btn btn-sm btn-primary"
+                                data-bs-toggle="modal"
+                                data-bs-target="#modal2">
+                            Read More
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CARD 3 -->
+            <div class="col-md-6 col-lg-4">
+                <div class="card card-announcement h-100 shadow-sm">
+                    <div class="card-body">
+                        <span class="badge bg-warning mb-2">Notice</span>
+                        <h5 class="card-title">Library Closure Notice</h5>
+                        <p class="card-text">Library closed on May 15 for maintenance.</p>
+                        <small class="text-muted">Posted 3 days ago</small>
+                    </div>
+                    <div class="card-footer bg-white">
+                        <button class="btn btn-sm btn-primary"
+                                data-bs-toggle="modal"
+                                data-bs-target="#modal3">
+                            Read More
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- MODAL 1 -->
+<div class="modal fade" id="modal1" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Final Exam Schedule</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        The final examination schedule is now available. Please check your dashboard for complete subject schedules.
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL 2 -->
+<div class="modal fade" id="modal2" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Graduation Ceremony 2026</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        All graduating students must attend the rehearsal on May 20, 2026 at the main auditorium.
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL 3 -->
+<div class="modal fade" id="modal3" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Library Closure</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        The library will be closed for maintenance. Online resources are still accessible.
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Bootstrap JS (IMPORTANT) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
+
+<!-- EVENTS SECTION -->
+<section id="events" class="py-5">
+    <div class="container">
+        <h2 class="text-center mb-5">Upcoming Events</h2>
+
+        <div class="row g-4">
+
+            <!-- EVENT 1 -->
+            <div class="col-lg-4">
+                <div class="card h-100">
+                    <div class="d-flex">
+                        <div class="event-date m-3">
+                            <div>MAY</div>
+                            <div class="fs-4 fw-bold">20</div>
+                        </div>
+                        <div class="card-body">
+                            <h5>Graduation Rehearsal</h5>
+                            <p><i class="fas fa-clock"></i> 9:00 AM - 12:00 PM</p>
+                            <p><i class="fas fa-map-marker-alt"></i> Main Auditorium</p>
+
+                            <button class="btn btn-outline-primary btn-sm"
+                                data-bs-toggle="modal"
+                                data-bs-target="#event1">
+                                Add to Calendar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- EVENT 2 -->
+            <div class="col-lg-4">
+                <div class="card h-100">
+                    <div class="d-flex">
+                        <div class="event-date m-3">
+                            <div>MAY</div>
+                            <div class="fs-4 fw-bold">25</div>
+                        </div>
+                        <div class="card-body">
+                            <h5>Sports Festival</h5>
+                            <p><i class="fas fa-clock"></i> 8:00 AM onwards</p>
+                            <p><i class="fas fa-map-marker-alt"></i> Sports Complex</p>
+
+                            <button class="btn btn-outline-primary btn-sm"
+                                data-bs-toggle="modal"
+                                data-bs-target="#event2">
+                                Add to Calendar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- EVENT 3 -->
+            <div class="col-lg-4">
+                <div class="card h-100">
+                    <div class="d-flex">
+                        <div class="event-date m-3">
+                            <div>JUN</div>
+                            <div class="fs-4 fw-bold">05</div>
+                        </div>
+                        <div class="card-body">
+                            <h5>Final Examinations Begin</h5>
+                            <p><i class="fas fa-clock"></i> All Day</p>
+
+                            <button class="btn btn-outline-primary btn-sm"
+                                data-bs-toggle="modal"
+                                data-bs-target="#event3">
+                                Add to Calendar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- ================= MODALS ================= -->
+
+<!-- MODAL 1 -->
+<div class="modal fade" id="event1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header bg-primary text-white">
+                <h5 class="modal-title">Graduation Rehearsal</h5>
+                <button class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <p>Date: May 20</p>
+                <p>Time: 9:00 AM - 12:00 PM</p>
+                <p>Location: Main Auditorium</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- MODAL 2 -->
+<div class="modal fade" id="event2">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header bg-primary text-white">
+                <h5 class="modal-title">Sports Festival</h5>
+                <button class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <p>Date: May 25</p>
+                <p>Time: 8:00 AM onwards</p>
+                <p>Location: Sports Complex</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- MODAL 3 -->
+<div class="modal fade" id="event3">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header bg-primary text-white">
+                <h5 class="modal-title">Final Examinations</h5>
+                <button class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <p>Date: June 5</p>
+                <p>Time: Whole Day</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Bootstrap JS (IMPORTANT PARA GUMANA BUTTONS) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
+
+
+<!-- ================= MODALS ================= -->
+
+<!-- EVENT MODAL -->
+<div class="modal fade" id="eventModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header bg-primary text-white">
+                <h5 class="modal-title">Graduation Rehearsal</h5>
+                <button class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <p>Date: May 20</p>
+                <p>Time: 9:00 AM - 12:00 PM</p>
+                <p>Location: Main Auditorium</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- GRADES MODAL -->
+<div class="modal fade" id="gradesModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header bg-success text-white">
+                <h5 class="modal-title">Midterm Grades</h5>
+                <button class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <p>Math: 90</p>
+                <p>English: 88</p>
+                <p>Science: 92</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ASSIGNMENT MODAL -->
+<div class="modal fade" id="assignmentModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header bg-warning">
+                <h5 class="modal-title">Pending Assignments</h5>
+                <button class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <p>Assignment 1: Math Problem Set</p>
+                <p>Assignment 2: English Essay</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Bootstrap JS (VERY IMPORTANT) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
+<!-- ABOUT SECTION -->
+<section id="about" class="py-5 bg-light">
+    <div class="container">
+        <div class="row align-items-center">
+
+            <!-- TEXT SIDE -->
+            <div class="col-lg-6">
+                <br>
+                <h2 class="mb-4">About the Portal</h2>
+
+                <p class="lead">
+                    This portal provides students, teachers, and staff with an easy way to access school announcements, upcoming events, and important updates.
+                </p>
+
+                <ul class="list-group list-group-flush mb-3">
+                    <li class="list-group-item">✅ Centralized information hub</li>
+                    <li class="list-group-item">✅ Real-time updates</li>
+                    <li class="list-group-item">✅ Mobile-friendly design</li>
+                    <li class="list-group-item">✅ Personalized student dashboard</li>
+                </ul>
+
+                <!-- OPTIONAL BUTTON -->
+                <button class="btn btn-primary"
+                        data-bs-toggle="modal"
+                        data-bs-target="#aboutModal">
+                    Learn More
+                </button>
+            </div>
+
+            <!-- IMAGE SIDE -->
+            <div class="col-lg-6 text-center">
+                <br>
+                <img src="https://images.unsplash.com/photo-1562774053-701939374585"
+                     class="img-fluid rounded shadow"
+                     alt="School Image">
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- ABOUT MODAL -->
+<div class="modal fade" id="aboutModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <div class="modal-header bg-primary text-white">
+                <h5 class="modal-title">About This Portal</h5>
+                <button class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+
+            <div class="modal-body">
+                <p>This system is designed to simplify communication between students and school administration.</p>
+                <p>It ensures fast access to announcements, events, and academic updates.</p>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- SUCCESS MODAL -->
+<div class="modal fade" id="successModal">
+    <div class="modal-dialog">
+        <div class="modal-content text-center">
+
+            <div class="modal-header bg-success text-white">
+                <h5 class="modal-title">Message Sent!</h5>
+                <button class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+
+            <div class="modal-body">
+                <p>Thank you! Your message has been successfully sent.</p>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- Bootstrap JS (IMPORTANT) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- JAVASCRIPT -->
+<script>
+document.getElementById("contactForm").addEventListener("submit", function(e) {
+    e.preventDefault(); // stop reload
+
+    // Simple validation check
+    let name = document.getElementById("name").value;
+    let email = document.getElementById("email").value;
+    let subject = document.getElementById("subject").value;
+    let message = document.getElementById("message").value;
+
+    if(name && email && subject && message) {
+        // Show modal
+        let modal = new bootstrap.Modal(document.getElementById('successModal'));
+        modal.show();
+
+        // Reset form
+        this.reset();
+    }
+});
+</script>
+
+</body>
+</html>
+<!-- CONTACT SECTION -->
+<section id="contact" class="py-5 bg-light">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <h2 class="text-center mb-4">Contact Us</h2>
+
+                <!-- FORM -->
+                <form id="contactForm">
+
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <input type="text" class="form-control" id="name" placeholder="Your Name" required>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <input type="email" class="form-control" id="email" placeholder="Email Address" required>
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <select class="form-select" id="subject" required>
+                            <option value="">Select Concern</option>
+                            <option>General Inquiry</option>
+                            <option>Technical Issue</option>
+                            <option>Event Suggestion</option>
+                        </select>
+                    </div>
+
+                    <div class="mb-3">
+                        <textarea class="form-control" id="message" rows="5" placeholder="Your Message" required></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary w-100">
+                        Send Message
+                    </button>
+
+                </form>
+
+            </div>
+        </div>
+    </div>
+</section>
+<!-- FOOTER -->
+<footer class="footer text-white py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <h5>School Event and Announcement Portal</h5>
+                <p>Connecting the school community through better communication.</p>
+            </div>
+            <div class="col-md-6 text-md-end">
+                <p>&copy; 2026 School Portal. All Rights Reserved.</p>
+                <div>
+                    <a href="#" class="text-white me-3"><i class="fab fa-facebook"></i></a>
+                    <a href="#" class="text-white"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- LOGIN MODAL -->
+<div class="modal fade" id="loginModal" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <div class="modal-header bg-primary text-white">
+                <h5 class="modal-title">Login to Portal</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+            </div>
+
+            <div class="modal-body">
+
+                <div class="mb-3">
+                    <label>Email / Username</label>
+                    <input type="text" id="loginUser" class="form-control">
+                </div>
+
+                <div class="mb-3">
+                    <label>Password</label>
+                    <input type="password" id="loginPass" class="form-control">
+                </div>
+
+                <div class="mb-3">
+                    <label>Login As</label>
+                    <select id="loginRole" class="form-select">
+                        <option value="student">Student</option>
+                        <option value="admin">Admin</option>
+                    </select>
+                </div>
+
+                <div id="loginError" class="text-danger text-center"></div>
+
+            </div>
+
+            <div class="modal-footer">
+                <button class="btn btn-secondary" data-bs-dismiss="modal">
+                    Cancel
+                </button>
+
+                <button class="btn btn-primary" onclick="loginUser()">
+                    Login
+                </button>
+            </div>
+
+            <div class="text-center pb-3">
+                <small>
+                    Don't have an account?
+                    <a href="#" data-bs-toggle="modal" data-bs-target="#registerModal">
+                        Register
+                    </a>
+                </small>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- REGISTER MODAL -->
+<div class="modal fade" id="registerModal" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <div class="modal-header bg-success text-white">
+                <h5 class="modal-title">Create Account</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+            </div>
+
+            <div class="modal-body">
+
+                <div class="mb-3">
+                    <label>Full Name</label>
+                    <input type="text" id="regName" class="form-control">
+                </div>
+
+                <div class="mb-3">
+                    <label>Email</label>
+                    <input type="email" id="regEmail" class="form-control">
+                </div>
+
+                <div class="mb-3">
+                    <label>Password</label>
+                    <input type="password" id="regPass" class="form-control">
+                </div>
+
+                <div class="mb-3">
+                    <label>Register As</label>
+                    <select id="regRole" class="form-select">
+                        <option value="student">Student</option>
+                        <option value="admin">Admin</option>
+                    </select>
+                </div>
+
+                <div id="registerMessage" class="text-center"></div>
+
+            </div>
+
+            <div class="modal-footer">
+                <button class="btn btn-success" onclick="registerUser()">
+                    Register
+                </button>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- BOOTSTRAP -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+
+/* =========================
+   REGISTER FUNCTION
+========================= */
+function registerUser() {
+
+    const name = document.getElementById("regName").value.trim();
+    const email = document.getElementById("regEmail").value.trim();
+    const password = document.getElementById("regPass").value.trim();
+    const role = document.getElementById("regRole").value;
+
+    const message = document.getElementById("registerMessage");
+
+    // EMPTY CHECK
+    if(name === "" || email === "" || password === "") {
+
+        message.innerHTML =
+            "<span class='text-danger'>Please fill all fields!</span>";
+
+        return;
+    }
+
+    // GET USERS
+    let users = JSON.parse(localStorage.getItem("portalUsers")) || [];
+
+    // CHECK EXISTING EMAIL
+    const existingUser = users.find(user => user.email === email);
+
+    if(existingUser) {
+
+        message.innerHTML =
+            "<span class='text-danger'>Email already registered!</span>";
+
+        return;
+    }
+
+    // CREATE USER OBJECT
+    const newUser = {
+        name: name,
+        email: email,
+        password: password,
+        role: role
+    };
+
+    // SAVE USER
+    users.push(newUser);
+
+    localStorage.setItem("portalUsers", JSON.stringify(users));
+
+    // SUCCESS MESSAGE
+    message.innerHTML =
+        "<span class='text-success'>Registration Successful!</span>";
+
+    // AUTO LOGIN SESSION
+    localStorage.setItem("portalName", name);
+    localStorage.setItem("portalUser", email);
+    localStorage.setItem("portalRole", role);
+
+    // CLEAR FORM
+    document.getElementById("regName").value = "";
+    document.getElementById("regEmail").value = "";
+    document.getElementById("regPass").value = "";
+
+    // REDIRECT AFTER 1 SECOND
+    setTimeout(() => {
+
+        if(role === "admin") {
+
+            window.location.href = "admin-dashboard.html";
+
+        } else {
+
+            window.location.href = "student-dashboard.html";
+
+        }
+
+    }, 1000);
+}
+
+
+/* =========================
+   LOGIN FUNCTION
+========================= */
+function loginUser() {
+
+    const email = document.getElementById("loginUser").value.trim();
+    const password = document.getElementById("loginPass").value.trim();
+    const role = document.getElementById("loginRole").value;
+
+    const errorDiv = document.getElementById("loginError");
+
+    // CLEAR ERROR
+    errorDiv.innerHTML = "";
+
+    // EMPTY CHECK
+    if(email === "" || password === "") {
+
+        errorDiv.innerHTML =
+            "<span class='text-danger'>Please fill all fields!</span>";
+
+        return;
+    }
+
+    // GET USERS
+    let users = JSON.parse(localStorage.getItem("portalUsers")) || [];
+
+    // FIND MATCHING USER
+    const user = users.find(u =>
+        u.email === email &&
+        u.password === password &&
+        u.role === role
+    );
+
+    // INVALID LOGIN
+    if(!user) {
+
+        errorDiv.innerHTML =
+            "<span class='text-danger'>Invalid credentials!</span>";
+
+        return;
+    }
+
+    // SAVE SESSION
+    localStorage.setItem("portalName", user.name);
+    localStorage.setItem("portalUser", user.email);
+    localStorage.setItem("portalRole", user.role);
+
+    alert("Login Successful!");
+
+    // REDIRECT
+    if(user.role === "admin") {
+
+        window.location.href = "admin-dashboard.html";
+
+    } else {
+
+        window.location.href = "student-dashboard.html";
+
+    }
+}
+
+</script>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Student Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<style>
+body {
+    background: #f5f7fb;
+    font-family: Arial, sans-serif;
+}
+
+/* HEADER */
+.header {
+    background: #003087;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/* CARD */
+.card {
+    border-radius: 12px;
+    transition: 0.3s;
+}
+.card:hover {
+    transform: translateY(-5px);
+}
+</style>
+</head>
+
+<body>
+
+<div class="container py-5">
+
+    <!-- HEADER -->
+    <div class="header mb-4">
+        <h2 id="studentName">Welcome Student</h2>
+        <p id="studentEmail">Email: </p>
+    </div>
+
+    <div class="row g-4">
+
+        <!-- PROFILE -->
+        <div class="col-md-4">
+            <div class="card p-3 shadow-sm">
+                <h5>Profile</h5>
+                <hr>
+                <p><strong>Name:</strong> <span id="pName"></span></p>
+                <p><strong>Email:</strong> <span id="pEmail"></span></p>
+                <p><strong>Role:</strong> Student</p>
+
+                <button class="btn btn-danger btn-sm mt-2" onclick="logout()">
+                    Logout
+                </button>
+            </div>
+        </div>
+
+        <!-- ANNOUNCEMENTS -->
+        <div class="col-md-4">
+            <div class="card p-3 shadow-sm">
+                <h5>Announcements</h5>
+                <hr>
+
+                <ul>
+                    <li>Exam schedule released</li>
+                    <li>Library closed on Friday</li>
+                    <li>Grades are now available</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- EVENTS -->
+        <div class="col-md-4">
+            <div class="card p-3 shadow-sm">
+                <h5>Upcoming Events</h5>
+                <hr>
+
+                <ul>
+                    <li>Graduation Rehearsal - May 20</li>
+                    <li>Sports Festival - May 25</li>
+                    <li>Final Exams - June 5</li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<script>
+// LOAD USER DATA
+const name = localStorage.getItem("portalName");
+const email = localStorage.getItem("portalUser");
+const role = localStorage.getItem("portalRole");
+
+// IF NOT LOGGED IN → REDIRECT BACK
+if (!email || role !== "student") {
+    alert("Please login first!");
+    window.location.href = "index.html";
+}
+
+// DISPLAY DATA
+document.getElementById("studentName").innerText = "Welcome " + name;
+document.getElementById("studentEmail").innerText = "Email: " + email;
+
+document.getElementById("pName").innerText = name;
+document.getElementById("pEmail").innerText = email;
+
+// LOGOUT FUNCTION
+function logout() {
+    localStorage.clear();
+    window.location.href = "index.html";
+}
+</script>
+
+</body>
+</html>

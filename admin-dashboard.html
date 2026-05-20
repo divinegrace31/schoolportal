@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Admin Dashboard</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+
+    <style>
+
+        body{
+            background:#f4f6f9;
+            font-family:Arial, sans-serif;
+            overflow-x:hidden;
+        }
+
+        /* SIDEBAR */
+        .sidebar{
+            width:250px;
+            height:100vh;
+            background:#003087;
+            position:fixed;
+            padding:20px;
+            color:white;
+        }
+
+        .sidebar h3{
+            margin-bottom:30px;
+        }
+
+        .sidebar a{
+            display:block;
+            color:white;
+            text-decoration:none;
+            padding:12px;
+            border-radius:10px;
+            margin-bottom:10px;
+            transition:0.3s;
+        }
+
+        .sidebar a:hover,
+        .sidebar a.active{
+            background:#0056b3;
+            padding-left:20px;
+        }
+
+        /* MAIN */
+        .main-content{
+            margin-left:260px;
+            padding:30px;
+        }
+
+        /* CARDS */
+        .card{
+            border:none;
+            border-radius:15px;
+            transition:0.3s;
+        }
+
+        .card:hover{
+            transform:translateY(-5px);
+            box-shadow:0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        /* SECTIONS */
+        .dashboard-section{
+            display:none;
+            animation:fade 0.5s ease;
+        }
+
+        .dashboard-section.active{
+            display:block;
+        }
+
+        @keyframes fade{
+            from{
+                opacity:0;
+                transform:translateY(20px);
+            }
+
+            to{
+                opacity:1;
+                transform:translateY(0);
+            }
+        }
+
+        /* MOBILE */
+        @media(max-width:768px){
+
+            .sidebar{
+                width:100%;
+                height:auto;
+                position:relative;
+            }
+
+            .main-content{
+                margin-left:0;
+            }
+
+        }
+
+    </style>
+</head>
+
+<body>
+
+<!-- SIDEBAR -->
+<div class="sidebar">
+
+    <h3>Admin Panel</h3>
+
+    <a href="#" class="menu-link active" data-section="dashboardSection">
+        <i class="fas fa-chart-line"></i> Dashboard
+    </a>
+
+    <a href="#" class="menu-link" data-section="studentsSection">
+        <i class="fas fa-user-graduate"></i> Students
+    </a>
+
+    <a href="#" class="menu-link" data-section="eventsSection">
+        <i class="fas fa-calendar"></i> Events
+    </a>
+
+    <a href="#" class="menu-link" data-section="announcementSection">
+        <i class="fas fa-bullhorn"></i> Announcements
+    </a>
+
+    <a href="#" onclick="logoutAdmin()">
+        <i class="fas fa-sign-out-alt"></i> Logout
+    </a>
+
+</div>
+
+<!-- MAIN CONTENT -->
+<div class="main-content">
+
+    <!-- DASHBOARD -->
+    <div id="dashboardSection" class="dashboard-section active">
+
+        <h2 class="mb-4">Welcome Admin</h2>
+
+        <div class="row g-4">
+
+            <div class="col-md-4">
+                <div class="card shadow p-4 bg-primary text-white">
+                    <h4 id="studentCount">1</h4>
+                    <p>Total Students</p>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card shadow p-4 bg-success text-white">
+                    <h4 id="eventCount">1</h4>
+                    <p>Upcoming Events</p>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card shadow p-4 bg-warning">
+                    <h4>Admin</h4>
+                    <p>System Access</p>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- STUDENTS -->
+    <div id="studentsSection" class="dashboard-section">
+
+        <div class="card shadow p-4">
+
+            <div class="d-flex justify-content-between mb-3">
+
+                <h3>Student List</h3>
+
+                <button class="btn btn-primary"
+                        data-bs-toggle="modal"
+                        data-bs-target="#addStudentModal">
+                    Add Student
+                </button>
+
+            </div>
+
+            <!-- SEARCH -->
+            <input type="text"
+                   id="searchStudent"
+                   class="form-control mb-3"
+                   placeholder="Search Student..."
+                   onkeyup="searchStudent()">
+
+            <table class="table table-striped">
+
+                <thead class="table-dark">
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Course</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+
+                <tbody id="studentTable">
+
+                    <tr>
+                        <td>2023001</td>
+                        <td>Stefhanie Joy </td>
+                        <td>BSIT</td>
+
+                        <td>
+                            <button class="btn btn-danger btn-sm"
+                                    onclick="deleteRow(this)">
+                                Delete
+                            </button>
+                        </td>
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+    <!-- EVENTS -->
+    <div id="eventsSection" class="dashboard-section">
+
+        <div class="card shadow p-4">
+
+            <h3 class="mb-3">Manage Events</h3>
+
+            <input type="text"
+                   id="eventInput"
+                   class="form-control mb-3"
+                   placeholder="Enter Event Name">
+
+            <button class="btn btn-success mb-3"
+                    onclick="addEvent()">
+                Add Event
+            </button>
+
+            <ul class="list-group" id="eventList">
+
+                <li class="list-group-item">
+                    Graduation Ceremony
+                </li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+    <!-- ANNOUNCEMENTS -->
+    <div id="announcementSection" class="dashboard-section">
+
+        <div class="card shadow p-4">
+
+            <h3 class="mb-3">Announcements</h3>
+
+            <textarea id="announcementText"
+                      class="form-control mb-3"
+                      rows="4"
+                      placeholder="Write announcement..."></textarea>
+
+            <button class="btn btn-primary"
+                    onclick="postAnnouncement()">
+                Post Announcement
+            </button>
+
+            <div id="announcementList" class="mt-4"></div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- ADD STUDENT MODAL -->
+<div class="modal fade" id="addStudentModal">
+
+    <div class="modal-dialog">
+
+        <div class="modal-content">
+
+            <div class="modal-header bg-primary text-white">
+
+                <h5>Add Student</h5>
+
+                <button class="btn-close btn-close-white"
+                        data-bs-dismiss="modal"></button>
+
+            </div>
+
+            <div class="modal-body">
+
+                <input type="text"
+                       id="studentId"
+                       class="form-control mb-3"
+                       placeholder="Student ID">
+
+                <input type="text"
+                       id="studentName"
+                       class="form-control mb-3"
+                       placeholder="Student Name">
+
+                <input type="text"
+                       id="studentCourse"
+                       class="form-control mb-3"
+                       placeholder="Course">
+
+                <button class="btn btn-primary w-100"
+                        onclick="addStudent()">
+                    Save Student
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- Bootstrap -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+
+/* SIDEBAR NAVIGATION */
+
+const links = document.querySelectorAll(".menu-link");
+
+links.forEach(link => {
+
+    link.addEventListener("click", function(e){
+
+        e.preventDefault();
+
+        // REMOVE ACTIVE
+        links.forEach(l => l.classList.remove("active"));
+
+        // ADD ACTIVE
+        this.classList.add("active");
+
+        // HIDE SECTIONS
+        document.querySelectorAll(".dashboard-section")
+        .forEach(section => {
+            section.classList.remove("active");
+        });
+
+        // SHOW TARGET
+        const target = this.getAttribute("data-section");
+
+        document.getElementById(target)
+        .classList.add("active");
+
+    });
+
+});
+
+
+/* ADD STUDENT */
+
+function addStudent(){
+
+    const id = document.getElementById("studentId").value;
+    const name = document.getElementById("studentName").value;
+    const course = document.getElementById("studentCourse").value;
+
+    if(id === "" || name === "" || course === ""){
+
+        alert("Please fill all fields!");
+        return;
+
+    }
+
+    const table = document.getElementById("studentTable");
+
+    table.innerHTML += `
+        <tr>
+            <td>${id}</td>
+            <td>${name}</td>
+            <td>${course}</td>
+
+            <td>
+                <button class="btn btn-danger btn-sm"
+                        onclick="deleteRow(this)">
+                    Delete
+                </button>
+            </td>
+        </tr>
+    `;
+
+    // UPDATE COUNT
+    document.getElementById("studentCount").innerText =
+        document.querySelectorAll("#studentTable tr").length;
+
+    // CLEAR
+    document.getElementById("studentId").value = "";
+    document.getElementById("studentName").value = "";
+    document.getElementById("studentCourse").value = "";
+
+    // CLOSE MODAL
+    bootstrap.Modal.getInstance(
+        document.getElementById("addStudentModal")
+    ).hide();
+
+}
+
+
+/* DELETE STUDENT */
+
+function deleteRow(button){
+
+    button.closest("tr").remove();
+
+    document.getElementById("studentCount").innerText =
+        document.querySelectorAll("#studentTable tr").length;
+
+}
+
+
+/* SEARCH STUDENT */
+
+function searchStudent(){
+
+    const input =
+        document.getElementById("searchStudent")
+        .value.toLowerCase();
+
+    const rows =
+        document.querySelectorAll("#studentTable tr");
+
+    rows.forEach(row => {
+
+        row.style.display =
+            row.innerText.toLowerCase().includes(input)
+            ? ""
+            : "none";
+
+    });
+
+}
+
+
+/* ADD EVENT */
+
+function addEvent(){
+
+    const input =
+        document.getElementById("eventInput");
+
+    if(input.value === ""){
+
+        alert("Enter event!");
+        return;
+
+    }
+
+    document.getElementById("eventList")
+    .innerHTML += `
+        <li class="list-group-item">
+            ${input.value}
+        </li>
+    `;
+
+    document.getElementById("eventCount").innerText =
+        document.querySelectorAll("#eventList li").length;
+
+    input.value = "";
+
+}
+
+
+/* POST ANNOUNCEMENT */
+
+function postAnnouncement(){
+
+    const text =
+        document.getElementById("announcementText");
+
+    if(text.value === ""){
+
+        alert("Write announcement!");
+        return;
+
+    }
+
+    document.getElementById("announcementList")
+    .innerHTML += `
+        <div class="alert alert-primary">
+            ${text.value}
+        </div>
+    `;
+
+    text.value = "";
+
+}
+
+
+/* LOGOUT */
+
+function logoutAdmin(){
+
+    alert("Logged out!");
+
+    window.location.href = "index.html";
+
+}
+
+</script>
+
+</body>
+</html>

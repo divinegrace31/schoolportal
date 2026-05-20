@@ -1,0 +1,577 @@
+   :root {
+    --primary-blue: #003087;
+    --light-blue: #0077cc;
+}
+
+body {
+    font-family: 'Roboto', Arial, sans-serif;
+    line-height: 1.6;
+    padding-top: 100px;
+}
+
+/* Navbar */
+.navbar {
+    background-color: var(--primary-blue) !important;
+    position:fixed;
+    top: 0;
+    left: 0;
+    width:100%;
+    z-index: 9999;
+}
+.nav-link.active {
+    font-weight: bold;
+    
+}
+
+/* Hero Section */
+.hero {
+    background-color: #003087;
+
+    background: linear-gradient(
+        rgba(0, 48, 135, 0.8), 
+        rgba(0, 48, 135, 0.8)
+    ),
+    url('https://source.unsplash.com/random/1920x1080/?school') center/cover no-repeat;
+
+    /* CHANGE SIZE */
+    height: 100vh;          /* Height of homepage */
+    width: 100%;            /* Full width */
+
+    /* SPACING */
+    padding: 100px;     /* Top-Bottom | Left-Right */
+
+    /* TEXT SETTINGS */
+    color: white;
+    text-align: center;
+
+    /* CENTER CONTENT */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* FULL SCREEN EVENTS */
+#events {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+}
+
+/* CONTAINER WIDTH */
+#events .container {
+    max-width: 1200px;
+}
+
+/* CARD DESIGN */
+#events .card {
+    border-radius: 15px;
+    transition: 0.3s;
+}
+
+#events .card:hover {
+    transform: translateY(-8px);
+}
+
+/* EVENT DATE */
+#events .event-date {
+    width: 70px;
+    height: 80px;
+    background-color: #0077cc;
+    color: white;
+    border-radius: 10px;
+    text-align: center;
+    padding: 10px;
+}
+
+/* TEXT SIZE */
+#events .event-date .fs-3 {
+    font-size: 22px;
+}
+
+/* CARD BODY */
+#events .card-body {
+    padding: 15px;
+}
+
+/* BUTTON */
+#events .btn {
+    margin-top: 10px;
+}
+
+/* Cards */
+.card-announcement {
+    transition: transform 0.3s;
+
+    padding: 100px;
+}
+
+.card-announcement:hover {
+    transform: translateY(-10px);
+    padding: 100px;
+}
+/* UPCOMING EVENTS CARD */
+.event-card {
+    height: 350px;       /* CARD HEIGHT */
+    width: 100%;         /* CARD WIDTH */
+    padding: 20px;       /* INSIDE SPACE */
+    border-radius: 15px;
+    padding: 100px;
+}
+
+/* EVENT TEXT */
+.event-card h5 {
+    font-size: 24px;
+    font-weight: bold;
+    padding: 100px;
+}
+
+/* EVENT DETAILS */
+.event-card p {
+    font-size: 16px;
+    padding: 100px;
+}
+
+/* EVENT DATE BOX */
+.event-date {
+    width: 80px;
+    height: 90px;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #0077cc;
+    color: white;
+    text-align: center;
+    padding: 100px;
+}
+/* CHANGE SIZE */
+.event-card {
+    height: 100vh;          /* Height of homepage */
+    width: 100%;            /* Full width */
+
+    /* SPACING */
+    padding: 100px;     /* Top-Bottom | Left-Right */
+
+    /* TEXT SETTINGS */
+    color: white;
+    text-align: center;
+
+    /* CENTER CONTENT */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s;
+
+    /* GENERAL */
+body {
+    background-color: #f5f7fb;
+    font-family: 'Segoe UI', sans-serif;
+
+    .event-date {
+            background: #0d6efd;
+            color: white;
+            padding: 10px;
+            border-radius: 10px;
+            text-align: center;
+            width: 70px;
+        }
+
+        .card {
+            border-radius: 15px;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+}
+
+
+/* SECTION TITLE */
+#announcements {
+    scroll-margin-top: 80px; 
+}
+
+#announcements h2 {
+    font-weight: bold;
+    color: #333;
+}
+
+/* CARD DESIGN */
+.card-announcement {
+    border: none;
+    border-radius: 15px;
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+/* CARD HOVER EFFECT */
+.card-announcement:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* CARD BODY */
+.card-announcement .card-body {
+    padding: 20px;
+}
+
+/* TITLE */
+.card-title {
+    font-weight: 600;
+    color: #222;
+}
+
+/* TEXT */
+.card-text {
+    font-size: 14px;
+    color: #555;
+}
+
+/* FOOTER */
+.card-footer {
+    border-top: none;
+    background: transparent;
+    padding: 15px;
+}
+
+/* BUTTON STYLE */
+.card-announcement .btn {
+    width: 100%;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+/* BUTTON HOVER */
+.card-announcement .btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* BUTTON CLICK */
+.card-announcement .btn:active {
+    transform: scale(0.95);
+}
+
+/* BADGES */
+.badge {
+    font-size: 12px;
+    padding: 6px 10px;
+    border-radius: 20px;
+}
+
+/* MODAL DESIGN */
+.modal-content {
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+/* MODAL HEADER */
+.modal-header {
+    background: #0d6efd;
+    color: white;
+    border-bottom: none;
+}
+
+/* MODAL TITLE */
+.modal-title {
+    font-weight: bold;
+}
+
+/* CLOSE BUTTON WHITE */
+.btn-close {
+    filter: invert(1);
+}
+
+/* MODAL BODY */
+.modal-body {
+    font-size: 15px;
+    color: #444;
+    padding: 20px;
+}
+
+/* RESPONSIVE SPACING */
+@media (max-width: 768px) {
+    #announcements {
+        padding: 30px 10px;
+    }
+}
+}
+
+#contact {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* FORM CONTAINER */
+#contact .col-lg-8 {
+    width: 100%;
+    max-width: 700px;
+
+    background: #ffffff;
+    padding: 100px;              /* INNER PADDING (MAIN ONE) */
+    border-radius: 15px;
+
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+
+    margin: auto;
+    
+}
+
+/* TITLE */
+#contact h2 {
+    font-weight: bold;
+    color: var(--primary-blue);
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+/* INPUTS */
+#contact .form-control,
+#contact .form-select {
+    border-radius: 10px;
+    padding: 12px 15px;         /* INPUT PADDING */
+    border: 1px solid #ddd;
+    transition: 0.3s;
+}
+
+/* INPUT FOCUS */
+#contact .form-control:focus,
+#contact .form-select:focus {
+    border-color: var(--light-blue);
+    box-shadow: 0 0 8px rgba(0,119,204,0.3);
+}
+
+/* TEXTAREA */
+#contact textarea {
+    resize: none;
+}
+
+/* BUTTON */
+#contact .btn {
+    background-color: var(--primary-blue);
+    border: none;
+    border-radius: 10px;
+
+    padding: 12px;              /* BUTTON SIZE */
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+/* BUTTON HOVER */
+#contact .btn:hover {
+    background-color: var(--light-blue);
+}
+.footer {
+            background-color: #00205c;
+}
+/* ABOUT SECTION */
+#about {
+    padding: 80px 0;
+    min-height: 100vh; /* buong screen */
+    display: flex;
+    align-items: center;
+}
+
+/* TEXT SIDE */
+#about h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #0d6efd;
+}
+
+#about .lead {
+    font-size: 1.1rem;
+    color: #555;
+    line-height: 1.8;
+}
+
+/* LIST STYLE */
+.list-group-item {
+    border: none;
+    background: transparent;
+    font-size: 1rem;
+    padding-left: 0;
+    color: #333;
+}
+
+/* BUTTON */
+#about .btn-primary {
+    padding: 10px 25px;
+    border-radius: 30px;
+    font-weight: 600;
+    transition: 0.3s ease;
+}
+
+#about .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* IMAGE */
+#about img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 15px;
+    transition: 0.3s ease;
+}
+
+#about img:hover {
+    transform: scale(1.02);
+}
+
+/* MODAL DESIGN */
+.modal-content {
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.modal-header {
+    border-bottom: none;
+}
+
+.modal-body {
+    padding: 25px;
+    font-size: 1rem;
+    color: #444;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+
+    #about {
+        padding: 60px 20px;
+        text-align: center;
+    }
+
+    #about h2 {
+        font-size: 2rem;
+    }
+
+    #about .lead {
+        font-size: 1rem;
+    }
+
+    .list-group-item {
+        text-align: left;
+    }
+
+    #about img {
+        margin-top: 30px;
+    }
+}
+
+/* LOGIN MODAL DESIGN */
+
+.modal-content{
+    border-radius: 15px;
+    overflow: hidden;
+    border: none;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+    animation: fadeIn 0.3s ease;
+}
+
+/* HEADER */
+.modal-header{
+    background: linear-gradient(135deg, #0d6efd, #0056d2);
+    border-bottom: none;
+    padding: 18px 25px;
+    padding-top: 50px;
+}
+
+.modal-title{
+    font-weight: 600;
+    font-size: 22px;
+}
+
+/* BODY */
+.modal-body{
+    padding: 25px;
+    background: #f8f9fa;
+}
+
+/* LABELS */
+.modal-body label{
+    font-weight: 500;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+/* INPUTS */
+.form-control,
+.form-select{
+    border-radius: 10px;
+    padding: 10px 14px;
+    border: 1px solid #ccc;
+    transition: 0.3s;
+}
+
+.form-control:focus,
+.form-select:focus{
+    border-color: #0d6efd;
+    box-shadow: 0 0 8px rgba(13,110,253,0.3);
+}
+
+/* ERROR MESSAGE */
+#loginError{
+    font-size: 14px;
+    font-weight: 500;
+    margin-top: 10px;
+}
+
+/* FOOTER */
+.modal-footer{
+    border-top: none;
+    padding: 20px;
+    background: #fff;
+}
+
+/* BUTTONS */
+.btn-primary{
+    background: linear-gradient(135deg, #0d6efd, #0056d2);
+    border: none;
+    border-radius: 10px;
+    padding: 10px 20px;
+    transition: 0.3s;
+}
+
+.btn-primary:hover{
+    transform: translateY(-2px);
+    background: linear-gradient(135deg, #0056d2, #0040a8);
+}
+
+.btn-secondary{
+    border-radius: 10px;
+    padding: 10px 20px;
+}
+
+/* REGISTER TEXT */
+.text-center small{
+    color: #555;
+}
+
+.text-center a{
+    color: #0d6efd;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.text-center a:hover{
+    text-decoration: underline;
+}
+
+/* ANIMATION */
+@keyframes fadeIn{
+    from{
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    to{
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+
